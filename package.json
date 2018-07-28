@@ -10,9 +10,8 @@
     "dev": "webpack-dev-server --mode development --hot",
     "build": "webpack --mode production",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
-    "clean": "rm -rf node_modules dist",
-    "precommit": "npm run lint"
+    "format": "eslint . --fix",
+    "clean": "rm -rf node_modules dist"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
@@ -23,8 +22,11 @@
     "electron": "^2.0.5",
     "eslint": "^5.2.0",
     "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-json": "^1.2.0",
     "eslint-plugin-prettier": "^2.6.2",
     "html-webpack-plugin": "^3.2.0",
+    "husky": "^1.0.0-rc.13",
+    "lint-staged": "^7.2.0",
     "prettier": "^1.13.7",
     "style-loader": "^0.21.0",
     "webpack": "^4.16.3",
@@ -34,5 +36,17 @@
   "dependencies": {
     "react": "^16.4.1",
     "react-dom": "^16.4.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,json,css}": [
+      "npm run format",
+      "npm run build",
+      "git add"
+    ]
   }
 }
