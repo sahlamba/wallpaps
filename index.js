@@ -9,11 +9,11 @@ function createWindow() {
   // Create the browser window.
   mainWindow = new BrowserWindow({ width: 800, height: 600 });
 
-  // and load the index.html of the app.
-  mainWindow.loadFile('index.html');
+  // and load the react app served by webpack-dev-server
+  mainWindow.loadURL('http://localhost:8080');
 
   // Open the DevTools.
-  // mainWindow.webContents.openDevTools()
+  mainWindow.webContents.openDevTools();
 
   // Emitted when the window is closed.
   mainWindow.on('closed', function() {
