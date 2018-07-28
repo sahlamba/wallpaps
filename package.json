@@ -9,7 +9,8 @@
     "start": "electron .",
     "dev": "webpack-dev-server --mode development --hot",
     "build": "webpack --mode production",
-    "lint": "eslint **/*.js",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "clean": "rm -rf node_modules dist",
     "precommit": "npm run lint"
   },
