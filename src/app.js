@@ -1,4 +1,5 @@
 import React from 'react';
+import { APP_WIDTH, APP_HEIGHT } from '../config';
 
 class App extends React.Component {
   constructor(props) {
@@ -27,7 +28,7 @@ class App extends React.Component {
           Refresh
         </button>
         <img
-          src={`https://source.unsplash.com/random/${800}x${600}?sig=${
+          src={`https://source.unsplash.com/random/${APP_WIDTH}x${APP_HEIGHT}?sig=${
             this.state.randomSig
           }`}
         />

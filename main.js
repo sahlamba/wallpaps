@@ -1,5 +1,6 @@
 // Modules to control application life and create native browser window
 const { app, BrowserWindow } = require('electron');
+const { APP_WIDTH, APP_HEIGHT } = require('./config');
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -7,7 +8,11 @@ let mainWindow;
 
 function createWindow() {
   // Create the browser window.
-  mainWindow = new BrowserWindow({ width: 800, height: 622 });
+  const APP_HEIGHT_INCL_TOP_BAR = APP_HEIGHT + 22;
+  mainWindow = new BrowserWindow({
+    width: APP_WIDTH,
+    height: APP_HEIGHT_INCL_TOP_BAR,
+  });
 
   // and load the react app served by webpack-dev-server
   mainWindow.loadURL('http://localhost:8080');
