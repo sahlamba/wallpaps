@@ -6,7 +6,7 @@
   "author": "Sahil Lamba <sahil.lamba95@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "electron .",
+    "start": "electron ./main.js",
     "dev": "webpack-dev-server --mode development --hot",
     "build": "webpack --mode production",
     "lint": "eslint .",
@@ -39,13 +39,12 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged && npm run build"
     }
   },
   "lint-staged": {
-    "*.{js,jsx,json,css}": [
+    "*.{js,jsx,json}": [
       "npm run format",
-      "npm run build",
       "git add"
     ]
   }
