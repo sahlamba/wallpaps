@@ -4,6 +4,8 @@
   border: 0;
   box-sizing: border-box;
   outline: none;
+  font-family: sans-serif;
+  color: #FFFFFF;
 }
 
 div.appContainer {
@@ -16,11 +18,9 @@ button.refreshImage {
   top: 20px;
   right: 20px;
   border: none;
-  color: #FFFFFF;
   border-radius: 3px 3px 3px 3px;
   -webkit-border-radius: 3px 3px 3px 3px;
   -moz-border-radius: 3px 3px 3px 3px;
-  font-family: sans-serif;
   width: auto;
   height: auto;
   font-size: 12px;
@@ -36,4 +36,11 @@ button.refreshImage {
 
 button.refreshImage:hover {
   transform: scale(1.1);
+}
+
+p.setAsBackground {
+  position: absolute;
+  top: 50px;
+  right: 20px;
+  font-size: 11px;
 }
