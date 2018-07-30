@@ -1,0 +1,14 @@
+const RAND_MAX = 1000;
+
+const arrayBufferToBase64 = buffer => {
+  var binary = '';
+  var bytes = [].slice.call(new Uint8Array(buffer));
+  bytes.forEach(b => (binary += String.fromCharCode(b)));
+  return window.btoa(binary);
+};
+
+const getRandomSig = () => {
+  return Math.floor(Math.random() * Math.floor(RAND_MAX));
+};
+
+export { arrayBufferToBase64, getRandomSig };

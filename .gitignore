@@ -9,3 +9,6 @@ node_modules
 
 # Build
 dist
+
+# API Keys
+config/keys.js
